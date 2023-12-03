@@ -5,5 +5,5 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-
+int _utchar(char c);
 #endif
