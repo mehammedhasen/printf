@@ -6,4 +6,8 @@
 
 int _printf(const char *format, ...);
 int _utchar(char c);
+
+#define UNUSED(x) (void)(x)
+#define BUFF_SIZE 1024
+
 #endif
