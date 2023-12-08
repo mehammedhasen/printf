@@ -18,13 +18,13 @@ int i, unknow_len = 0, count_chars = -1;
 fmt_t fmt_types[] = {
 {'c', prt_char}, {'s', prt_string}, {'%', prt_percent},
 {'i', prt_int}, {'d', prt_int}, {'b', prt_binary},
-{'u', prt_unsigned}, {'o', prt_octal}, {'x', prt_hexadecimal},
+{'u', prt_unsigned}, {'o', prt_octal}, {'x', prt_hexa_lower},
 {'X', prt_hexa_upper}, {'p', prt_pointer}, {'S', prt_non_printable},
 {'r', prt_reverse}, {'R', prt_rot13string}, {'\0', NULL}
 };
 for (i = 0; fmt_types[i].fmt != '\0'; i++)
 if (fmt[*ind] == fmt_types[i].fmt)
-return (fmt_types[i].fn(list, buffer, flags, width, precision, size));
+return (fmt_types[i].fn(list, buff, flags, width, precision, size));
 if (fmt_types[i].fmt == '\0')
 {
 if (fmt[*ind] == '\0')
