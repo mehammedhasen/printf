@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 
 {
 
-int indx = 0, prt_type = 0, cuont_chars = 0;
+int indx = 0, prt_type = 0, count_chars = 0;
 
 int flags, width, precision, size, buf_indx = 0;
 
@@ -21,10 +21,9 @@ if (format == NULL)
 
 return (-1);
 
-
 va_start(list, format);
 
-for (i = 0; format && format[indx] != '\0'; indx++)
+for (indx = 0; format && format[indx] != '\0'; indx++)
 
 {
 
@@ -32,7 +31,7 @@ if (format[indx] !=  '%')
 
 {
 
-buff[buf_ind++] = format[indx];
+buff[buf_indx++] = format[indx];
 
 if (buf_indx == BUFF_SIZE)
 
@@ -52,13 +51,13 @@ else
 
 print_buffer(buff, &buf_indx);
 
-flags = get_flags(format, &indx);
+flags = input_flags(format, &indx);
 
-width = get_width(format, &indx, list);
+width = input_width(format, &indx, list);
 
-precision = get_precision(format, &indx, list);
+precision = input_precision(format, &indx, list);
 
-size = get_size(format, &indx);
+size = input_size(format, &indx);
 
 ++indx;
 

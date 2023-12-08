@@ -63,7 +63,7 @@ return (3);
 
 }
 
-
+#include "main.h"
 
 /**
  * is_digit - Verifies if a char is a digit
@@ -77,11 +77,8 @@ int is_digit(char c)
 {
 
 if (c >= '0' && c <= '9')
-
 return (1);
-
 else
-
 return (0);
 
 }
